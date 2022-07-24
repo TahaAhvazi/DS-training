@@ -30,6 +30,14 @@ public class myArray {
       // WE GONNA DECREMENT THE ARRAY ITEM LENGTH (BECAUSE WE REMOVED ONE ITEM)
       count--;
    }
+   public int indexOf(int item){
+      for (int i = 0; i < count; i++) {
+         if (item == items[i]) {
+            return i;
+         }
+      }
+      return -1;
+   }
    public void print() {
       for (int i = 0; i < count; i++) {
          System.out.println(items[i]);

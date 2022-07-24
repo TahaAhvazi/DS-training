@@ -7,6 +7,8 @@ public class App {
         numbers.insert(87);
         numbers.insert(6969);
         numbers.insert(785426);
+        numbers.removeAt(2);
+        System.out.println("Index of the item is " + numbers.indexOf(6969));
         numbers.print();
     }
 }
