@@ -5,12 +5,18 @@ public class myArray {
       items = new int[length];
    }
    public void insert(int item) {
+      // RESIZE THE ARRAY IF IT WAS FULL
       if (items.length == count) {
-         items = new int[count+1];
-         items[count++] = item;
-      }else{
-      items[count++] = item;
+         // HERE WE GONNA CREATE A NEW ARRAY
+         int[] newItems = new int[count*2];
+         // HERE WE GONNA COPY ALL THE ITEM OF PREVIOUS ARRAY INTO NEW ONE
+         for (int i = 0; i < count; i++) {
+            newItems[i] = items[i];
+         }
+         items = newItems; // SET
       }
+      // IF THE ARRAY WAS NOT FULL
+      items[count++] = item;
    }
    public void removeAt(int index){
       // WE GONNA VALIDATE THE INDEX 
@@ -19,7 +25,7 @@ public class myArray {
       }
       // WE GONNA SHIFT ALL THE ITEMS OF THE ARRAY ONE STEP TO LEFT  
       for (int i = index; i < count; i++) {
-         items[index] = items[index+1];
+         items[i] = items[i+1];
       }
       // WE GONNA DECREMENT THE ARRAY ITEM LENGTH (BECAUSE WE REMOVED ONE ITEM)
       count--;
