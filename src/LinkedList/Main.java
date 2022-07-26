@@ -9,6 +9,7 @@ public class Main {
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
+        list.addFirst(55);
         System.out.println(list);
         // LinkedList<Integer> list = new LinkedList<>();
         // list.addLast(10);

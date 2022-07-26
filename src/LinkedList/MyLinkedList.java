@@ -12,6 +12,15 @@ public class MyLinkedList {
     private Node last;
     // *** CLONE A LINKED LIST IN DATA STRUCTURES AND ALGORITHMS *** \\
     //ADD FIRST
+    public void addFirst(int item){
+        Node node = new Node(item);
+        if (first == null) {
+            first = last = node;
+        }else{
+            node.next = node;
+            first = node;
+        }
+    }
     // ADD LAST
     public void addLast(int item){
         Node node = new Node(item);
