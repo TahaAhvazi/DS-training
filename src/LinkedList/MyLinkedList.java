@@ -34,6 +34,9 @@ public class MyLinkedList {
     // DELETE FIRST
     //DELETE LAST
     //CONTAINS
+    public boolean contains(int item){
+        return indexOF(item) != -1;
+    }
     //INDEX OF
     public int indexOF(int item){
         int index = 0;
