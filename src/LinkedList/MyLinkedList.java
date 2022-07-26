@@ -48,6 +48,18 @@ public class MyLinkedList {
         }
     }
     //DELETE LAST
+    public void removeLast(){
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+        Node previous = getPrevious(last);
+        last = previous;
+        last.next = null;
+    }
     //CONTAINS
     public boolean contains(int item){
         return indexOF(item) != -1;
@@ -68,5 +80,15 @@ public class MyLinkedList {
     // CREATING ISEMPTY METHOD
     public boolean isEmpty(){
         return first == null;
+    }
+    //CREATE GET PREVIOUS METHOD
+    public Node getPrevious(Node node){
+        Node current  = first;
+        while (current != last) {
+            if (current.next == last) {
+                return current;
+            }
+        }
+        return null;
     }
 }
