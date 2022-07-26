@@ -14,7 +14,7 @@ public class MyLinkedList {
     //ADD FIRST
     public void addFirst(int item){
         Node node = new Node(item);
-        if (first == null) {
+        if (isEmpty()) {
             first = last = node;
         }else{
             node.next = node;
@@ -24,7 +24,7 @@ public class MyLinkedList {
     // ADD LAST
     public void addLast(int item){
         Node node = new Node(item);
-        if (first == null) {
+        if (isEmpty()) {
             first = last = node;
         }else{
             last.next = node;
@@ -35,4 +35,8 @@ public class MyLinkedList {
     //DELETE LAST
     //CONTAINS
     //INDEX OF
+    // CREATING ISEMPTY METHOD
+    public boolean isEmpty(){
+        return first == null;
+    }
 }
