@@ -35,6 +35,18 @@ public class MyLinkedList {
     //DELETE LAST
     //CONTAINS
     //INDEX OF
+    public int indexOF(int item){
+        int index = 0;
+        Node current = first;
+        while (current != null) {
+            if (current.value == item) {
+                return index;
+            }
+            current = current.next;
+            index ++;
+        }
+        return -1;
+    }
     // CREATING ISEMPTY METHOD
     public boolean isEmpty(){
         return first == null;
