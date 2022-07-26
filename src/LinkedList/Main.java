@@ -10,6 +10,6 @@ public class Main {
         list.addFirst(55);
         list.addFirst(55);
         System.out.println(list.indexOF(30));
-        System.out.println(list.contains(40));
+        System.out.println(list.contains(10));
     }
 }
