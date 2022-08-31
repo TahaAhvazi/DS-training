@@ -3,52 +3,62 @@ package LinkedList;
 import java.util.NoSuchElementException;
 
 public class MyLinkedList {
-    private class Node{
+    private class Node {
         private int value;
         private Node next;
-        public Node(int value){
+
+        public Node(int value) {
             this.value = value;
         }
     }
+
     private Node first;
     private Node last;
+    private int size;
+
     // *** CLONE A LINKED LIST IN DATA STRUCTURES AND ALGORITHMS *** \\
-    //ADD FIRST
-    public void addFirst(int item){
+    // ADD FIRST
+    public void addFirst(int item) {
         Node node = new Node(item);
         if (isEmpty()) {
             first = last = node;
-        }else{
+        } else {
             node.next = node;
             first = node;
         }
+        size++;
     }
+
     // ADD LAST
-    public void addLast(int item){
+    public void addLast(int item) {
         Node node = new Node(item);
         if (isEmpty()) {
             first = last = node;
-        }else{
+        } else {
             last.next = node;
             last = node;
         }
+        size++;
     }
+
     // DELETE FIRST
-    public void removeFirst(int item){
+    public void removeFirst(int item) {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
         if (first == last) {
             first = last = null;
             return;
-        }else{
+        } else {
             Node secound = first.next;
             first.next = null;
             first = secound;
         }
+        size--;
     }
-    //DELETE LAST
-    public void removeLast(){
+
+    // DELETE LAST
+    public void removeLast() {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
@@ -59,13 +69,16 @@ public class MyLinkedList {
         Node previous = getPrevious(last);
         last = previous;
         last.next = null;
+        size--;
     }
-    //CONTAINS
-    public boolean contains(int item){
+
+    // CONTAINS
+    public boolean contains(int item) {
         return indexOF(item) != -1;
     }
-    //INDEX OF
-    public int indexOF(int item){
+
+    // INDEX OF
+    public int indexOF(int item) {
         int index = 0;
         Node current = first;
         while (current != null) {
@@ -73,17 +86,23 @@ public class MyLinkedList {
                 return index;
             }
             current = current.next;
-            index ++;
+            index++;
         }
         return -1;
     }
+
+    public int size() {
+        return size;
+    }
+
     // CREATING ISEMPTY METHOD
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return first == null;
     }
-    //CREATE GET PREVIOUS METHOD
-    public Node getPrevious(Node node){
-        Node current  = first;
+
+    // CREATE GET PREVIOUS METHOD
+    public Node getPrevious(Node node) {
+        Node current = first;
         while (current != last) {
             if (current.next == last) {
                 return current;
