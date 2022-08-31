@@ -95,6 +95,17 @@ public class MyLinkedList {
         return size;
     }
 
+    public int[] toArray() {
+        int[] array = new int[size];
+        Node current = first;
+        int index = 0;
+        while (current != null) {
+            array[index++] = current.value;
+            current = current.next;
+        }
+        return array;
+    }
+
     // CREATING ISEMPTY METHOD
     public boolean isEmpty() {
         return first == null;
