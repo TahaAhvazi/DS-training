@@ -106,6 +106,22 @@ public class MyLinkedList {
         return array;
     }
 
+    public void reverse() {
+        // changing the direction of LinkedLists
+        Node previous = first;
+        Node current = first.next;
+        while (current != null) {
+            Node BackUp = current.next;
+            current.next = previous;
+            previous = current;
+            current = BackUp;
+        }
+        // Changing the first and last node
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
     // CREATING ISEMPTY METHOD
     public boolean isEmpty() {
         return first == null;

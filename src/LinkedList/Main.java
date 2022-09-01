@@ -8,8 +8,10 @@ public class Main {
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
-        System.out.println(list.size());
         int[] array = list.toArray();
         System.out.println(Arrays.toString(array));
+        list.reverse();
+        int[] array1 = list.toArray();
+        System.out.println(Arrays.toString(array1));
     }
 }
