@@ -116,7 +116,7 @@ public class MyLinkedList {
             previous = current;
             current = BackUp;
         }
-        // Changing the first and last node
+        // Changing the first and last node 
         last = first;
         last.next = null;
         first = previous;
