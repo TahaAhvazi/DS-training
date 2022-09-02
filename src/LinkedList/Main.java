@@ -11,6 +11,7 @@ public class Main {
         int[] array = list.toArray();
         System.out.println(Arrays.toString(array));
         list.reverse();
+        System.out.println(list.getKthFromtheEnd(1));
         int[] array1 = list.toArray();
         System.out.println(Arrays.toString(array1));
     }
