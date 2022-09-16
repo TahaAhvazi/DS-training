@@ -13,10 +13,15 @@ public class mian {
         // top = stack.peek();
         // System.out.println(top);
 
-        String str = null;
-        StringReverser reverser = new StringReverser();
-        String reversed = reverser.reverse(str);
-        System.out.println(reversed);
+        // String str = null;
+        // StringReverser reverser = new StringReverser();
+        // String reversed = reverser.reverse(str);
+        // System.out.println(reversed);
+
+        String str = ")1 +2(";
+        Expression exp = new Expression();
+        Boolean result = exp.IsBalanced(str);
+        System.out.println(result);
 
     }
 }
