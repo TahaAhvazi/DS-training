@@ -18,10 +18,15 @@ public class mian {
         // String reversed = reverser.reverse(str);
         // System.out.println(reversed);
 
-        String str = ")1 +2(";
-        Expression exp = new Expression();
-        Boolean result = exp.IsBalanced(str);
-        System.out.println(result);
+        // String str = ")1 +2(";
+        // Expression exp = new Expression();
+        // Boolean result = exp.IsBalanced(str);
+        // System.out.println(result);
 
+        Stack stack = new Stack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println(stack);
     }
 }
